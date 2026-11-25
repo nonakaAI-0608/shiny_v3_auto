@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "シャニマス V3 自動試用版",
+  "version": "0.4.4",
+  "description": "認識した確定操作と直後のAPI通信開始から、回数条件内で戻る／進むを実行する試用版。",
+  "permissions": [
+    "tabs",
+    "storage",
+    "webRequest",
+    "<all_urls>"
+  ],
+  "background": {
+    "scripts": [
+      "templates.js",
+      "vision.js",
+      "flow.js",
+      "background.js",
+      "visual-background.js",
+      "auto-background.js",
+      "setup-background.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "V3 自動試用版",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://shinycolors.enza.fun/*"
+      ],
+      "js": [
+        "content.js",
+        "visual-content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "shiny-v3-diagnostic@example.invalid",
+      "strict_min_version": "109.0"
+    }
+  }
+}
