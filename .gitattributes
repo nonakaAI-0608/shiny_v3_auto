@@ -1,1 +1,6 @@
 * -text
+
+# 利用者向けZIP（git archive / GitHub の Source code）に入れない開発用ファイル
+.gitignore export-ignore
+.gitattributes export-ignore
+test_*.py export-ignore
